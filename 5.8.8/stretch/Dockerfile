@@ -1,9 +1,9 @@
-FROM debian:stable
+FROM buildpack-deps:stretch
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -yq && \
-    apt-get install -yq --no-install-recommends build-essential curl ca-certificates tar bzip2 patch && \
+    apt-get install -yq --no-install-recommends perl && \
     apt-get clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
